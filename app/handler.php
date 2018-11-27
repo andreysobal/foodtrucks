@@ -9,9 +9,10 @@ if ($remote_referer_arr['host'] != $remote_referer_arr['host']) die;
 
 require_once 'config.php';
 
-$email         	= (isset($_POST['email'])) ? htmlspecialchars(stripslashes($_POST['email']), ENT_QUOTES, "UTF-8") : 'не указан';
+$email          = (isset($_POST['email'])) ? htmlspecialchars(stripslashes($_POST['email']), ENT_QUOTES, "UTF-8") : 'не указан';
+$name         = (isset($_POST['name'])) ? htmlspecialchars(stripslashes($_POST['name']), ENT_QUOTES, "UTF-8") : 'не указано';
 $number         = (isset($_POST['number'])) ? htmlspecialchars(stripslashes($_POST['number']), ENT_QUOTES, "UTF-8") : 'не указан';
-$message 				= (isset($_POST['message'])) ? htmlspecialchars(stripslashes($_POST['message']), ENT_QUOTES, "UTF-8") : '';
+$message                = (isset($_POST['message'])) ? htmlspecialchars(stripslashes($_POST['message']), ENT_QUOTES, "UTF-8") : '';
 
 $utm_source         = (isset($_POST['utm_source'])) ? htmlspecialchars(stripslashes($_POST['utm_source']), ENT_QUOTES, "UTF-8") : '';
 $utm_medium         = (isset($_POST['utm_medium'])) ? htmlspecialchars(stripslashes($_POST['utm_medium']), ENT_QUOTES, "UTF-8") : '';
@@ -27,6 +28,7 @@ if (isset($_POST['siteurl'])) $_POST['siteurl'] = htmlspecialchars(stripslashes(
 
 $message = nl2br($message);
 
+$text .= '<b>Имя клиента:</b> ' . $name . "<br>" . PHP_EOL;
 $text .= '<b>Email клиента:</b> ' . $email . "<br>" . PHP_EOL;
 $text .= '<b>Телефон клиента:</b> ' . $number . "<br>" . PHP_EOL;
 if (!!$message) {$text .= '<b>Заданный вопрос:</b> ' . $message . "<br><br>" . PHP_EOL;}
@@ -56,11 +58,11 @@ require 'lib/phpmailer/src/SMTP.php';
 $mail = new PHPMailer(false); //defaults to using php "mail()"; the true param means it will throw exceptions on errors, which we need to catch
 //Server settings
 $mail->SMTPOptions = array(
-	'ssl' => array(
-		'verify_peer' => false,
-		'verify_peer_name' => false,
-		'allow_self_signed' => true
-	)
+    'ssl' => array(
+        'verify_peer' => false,
+        'verify_peer_name' => false,
+        'allow_self_signed' => true
+    )
 );
 $mail->SMTPDebug = 2;
 $mail->Host = $fromHost;
@@ -92,4 +94,3 @@ try {
 } catch (Exception $e) {
     echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
 }
-

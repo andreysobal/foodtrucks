@@ -29,10 +29,10 @@ gulp.task('browser-sync', function() {
 
 gulp.task('styles', function() {
 	return gulp.src('app/'+syntax+'/**/*.'+syntax+'')
-	.pipe(sass({ outputStyle: 'expanded' }).on("error", notify.onError()))
+	.pipe(sass({outputStyle: 'expanded'}).on("error", notify.onError()))
 	.pipe(rename({ suffix: '.min', prefix : '' }))
 	.pipe(autoprefixer(['last 15 versions']))
-	.pipe(cleancss( {level: { 1: { specialComments: 0 } } })) // Opt., comment out when debugging
+	// .pipe(cleancss( {level: { 1: { specialComments: 0 } } })) // Opt., comment out when debugging
 	.pipe(gulp.dest('app/css'))
 	.pipe(browserSync.stream())
 });
@@ -40,6 +40,7 @@ gulp.task('styles', function() {
 gulp.task('components_style', function() {
 	return gulp.src([
 		'app/components/animate.css/animate.min.css',
+		'app/components/swiper/dist/css/swiper.min.css',
 		'app/components/bootstrap/dist/css/bootstrap-reboot.min.css',
 		'app/components/bootstrap/dist/css/bootstrap-grid.min.css',
 		])
@@ -68,7 +69,9 @@ gulp.task('js', function() {
 gulp.task('components_script', function() {
 	return gulp.src([
 		'app/components/jquery/dist/jquery.min.js',
+		'app/components/jquery-form/dist/jquery.form.min.js',
 		'app/components/wow/dist/wow.min.js',
+		'app/components/swiper/dist/js/swiper.min.js',
 		])
 	.pipe(concat('components.min.js'))
 	.pipe(gulp.dest('app/scripts/'))
