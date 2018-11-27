@@ -90,7 +90,7 @@ gulp.task('extras', () => {
     '!app/scss/**/*.*',
     '!app/components/**/*.*',
     '!app/js/**/*.*',
-    '!app/img/**/*.*',
+    'app/img/**/*.*',
     'app/*.php',
     'app/*.html',
     'app/*.**'
