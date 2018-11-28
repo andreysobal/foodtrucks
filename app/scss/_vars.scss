@@ -11,8 +11,14 @@ $xxl: 1920px;
 
 /*colors*/
 $white: #fff;
+$white_active: #ccffff;
 $black: #000;
+$black_shadow: rgba(0,0,0,0.6);
 $green: #018b86;
+$orange: #cc9933;
+$orange_active: #ff9933;
+$yellow_active: #ffff00;
+$yellow_shadow: rgba(255,255,0,0.57);
 
 $orange_light_bg: #ffc330;
 $orange_dark_bg: #f7992a;
@@ -27,7 +33,7 @@ $black_bg: #333333;
 $red_text: #eb6320;
 $yellow_text: #ffea00	;
 $green_text: #009c88;
-$orange_text: #FFA500;
+$orange_text: #ff9933;
 
 $error: rgba(255,0,0,0.8);
 $inactive: rgba(232,97,106,0.55);

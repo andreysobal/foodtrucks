@@ -41,7 +41,7 @@ gulp.task('components_style', function() {
 	return gulp.src([
 		'app/components/animate.css/animate.min.css',
 		'app/components/swiper/dist/css/swiper.min.css',
-		'app/components/bootstrap/dist/css/bootstrap-reboot.min.css',
+		//'app/components/bootstrap/dist/css/bootstrap-reboot.min.css',
 		'app/components/bootstrap/dist/css/bootstrap-grid.min.css',
 		])
 	.pipe(concatCss('components.css'))
