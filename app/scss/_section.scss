@@ -15,6 +15,58 @@ section {
 		li:before { position: absolute; top: 0; left: 0; content: '•'; width: 1.1rem; height: 1.16rem; line-height: 1.6rem; font-size: 1em;}
 	}
 }
+.section_2 {
+	padding-top: 0;
+	background: url(../img/examples_bg.jpg) 50% 50% no-repeat; background-size: 100% 100%;
+	h2 {
+		weight: 100%; height: auto; padding: 1.51rem; 
+		background-image: linear-gradient(to right, $orange, $orange_active);
+	}
+	h3:first-of-type {text-transform: uppercase;}
+	.wrapper {padding-bottom: 6.1rem;}
+	.wrapper:last-child {
+		padding-bottom: 0;
+		h2 {background: transparent;}
+	}
+	.orange-box {
+		display: inline-block; width: auto; height: auto; padding: 1rem; margin: 0.5rem auto; 
+		background-color: $orange_active; color: $white;
+		font-size: 1.29rem;
+	}
+	.features {
+		width: 80%; margin: auto; padding-top: 18rem; padding-left: 1rem; padding-right: 1rem; padding-bottom: 3rem;
+		p {text-align: left;}
+		ul {list-style: none; text-align: left; position: relative;}
+		li {padding-left: 1.1rem; position: relative;}
+		li.invisible {display: none; opacity: 0;}
+		li:before { position: absolute; top: 0; left: 0; content: '•'; width: 1.1rem; height: 1.16rem; line-height: 1.6rem; font-size: 1em;}
+	}
+	.button {margin: auto;}
+
+	.slider-container {position: relative; width: 100%; height: auto; padding-top: 1.65rem;}
+	.prev-slide, .next-slide {
+		position: absolute;
+		top: 50%;
+		width: 2.7rem;
+		height: 19rem;
+		margin-top: -1.041rem;
+		z-index: 10;
+		cursor: pointer;
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	.prev-slide {background-image: url(../img/vlevo.png); left: -2.7rem; right: auto;}
+	.next-slide {background-image: url(../img/vpravo.png); right: -2.7rem; left: auto;}
+	.swiper-container {
+	  width: 100%;
+	  margin: auto;
+	  height: auto;
+	}
+	.swiper-slide {
+		background: url(../img/trucks_examples.png) 100% 6rem no-repeat; background-size: 97% auto;
+	}
+}
 
 /*adaptivity*/
 	/*mobile*/
@@ -30,6 +82,19 @@ section {
 			padding-bottom: 3rem;
 			background-image: url(../img/paprika.png), url(../img/middle_right.png), url(../img/middle_bg.jpg); background-position: 2% 40%, 100% 40%, 50% 50%; background-repeat: no-repeat; background-size: auto 10rem, auto 15rem, 100% 100%;
 			.box_wrapper {background: url(../img/middle_arrows.png) 50% 100% no-repeat; background-size: contain; height: 6rem;}
+		}
+		.section_2 {
+			.features {
+				background-image: url(../img/examples_features_left.png), url(../img/examples_features_right.png); 
+				background-position: 0% 0, 115% 0; background-repeat: no-repeat; background-size: 31.5rem 32.5rem, 35.5rem 32rem;
+				width: 100%; padding-top: 3rem; padding-left: 1rem; padding-right: 0; padding-bottom: 32rem;
+				.row div:first-of-type > * {padding-left: 2.5rem;}
+				.row div:last-of-type > * {padding-right: 2.5rem;}
+				li.invisible {display: list-item;}
+			}
+			.swiper-slide {
+				background: url(../img/trucks_examples.png) 50% 100% no-repeat; background-size: 100% auto;
+			}
 		}
 	}
 	/*wideview monitor*/
