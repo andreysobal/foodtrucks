@@ -1,0 +1,44 @@
+section {
+	position: relative;
+	width: 100%; height: auto;  padding: 2rem 0 5.8rem;
+	font-size: 1.16rem;
+}
+.section_1 {
+	background: url(../img/middle_bg.jpg) 50% 50% no-repeat; background-size: 100% 100%;
+	text-align: left; padding-bottom: 7.8rem;
+	.box_wrapper {height: 4rem;}
+	.features {
+		text-align: left;
+		h3 {text-align: left; background: url(../img/features-wrapp.png) 50% 0 no-repeat; background-size: contain; padding: 2.2rem 3.5rem 3.5rem;}
+		ul {list-style: none; text-align: left; padding-left: 3.2rem; padding-bottom: 2rem; position: relative;}
+		li {padding-left: 1.1rem; position: relative;}
+		li:before { position: absolute; top: 0; left: 0; content: '•'; width: 1.1rem; height: 1.16rem; line-height: 1.6rem; font-size: 1em;}
+	}
+}
+
+/*adaptivity*/
+	/*mobile*/
+	@media only screen and (min-width: $sm) {
+
+	}
+	/*tablets*/
+	@media only screen and (min-width: $md) {
+	}
+	/*desktop or tablets in landscape*/
+	@media only screen and (min-width: $lg) {
+		.section_1 {
+			padding-bottom: 3rem;
+			background-image: url(../img/paprika.png), url(../img/middle_right.png), url(../img/middle_bg.jpg); background-position: 2% 40%, 100% 40%, 50% 50%; background-repeat: no-repeat; background-size: auto 10rem, auto 15rem, 100% 100%;
+			.box_wrapper {background: url(../img/middle_arrows.png) 50% 100% no-repeat; background-size: contain; height: 6rem;}
+		}
+	}
+	/*wideview monitor*/
+	@media only screen and (min-width: $xl) {
+		.section_1 {
+			background-image: url(../img/paprika.png), url(../img/middle_right.png), url(../img/middle_bg.jpg); background-position: 9% 40%, 100% 60%, 50% 50%; background-repeat: no-repeat; background-size: auto 12.5rem, auto 24rem, 100% 100%;
+		}
+	}
+	/*supperwide view monitor*/
+	@media only screen and (min-width: $xxl) {
+		.section_1 {background-image: url(../img/middle_bg_complete.jpg); background-position: 50% 50%; background-size: 100% 100%;}
+	}
