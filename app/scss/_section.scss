@@ -3,6 +3,8 @@ section {
 	width: 100%; height: auto;  padding: 2rem 0 5.8rem;
 	font-size: 1.16rem;
 }
+
+/*new section styles*/
 .section_1 {
 	background: url(../img/middle_bg.jpg) 50% 50% no-repeat; background-size: 100% 100%;
 	text-align: left; padding-bottom: 7.8rem;
@@ -15,6 +17,8 @@ section {
 		li:before { position: absolute; top: 0; left: 0; content: '•'; width: 1.1rem; height: 1.16rem; line-height: 1.6rem; font-size: 1em;}
 	}
 }
+
+/*new section styles*/
 .section_2 {
 	padding-top: 0; padding-bottom: 5rem;
 	background: url(../img/examples_bg_short.jpg) 50% 0 no-repeat; background-size: 100% 100%;
@@ -83,6 +87,37 @@ section {
 	}
 }
 
+/*new section styles*/
+.section_3 {
+	background: url(../img/how_made_bg.jpg) 50% 50% no-repeat; background-size: 100% 100%;
+	.features {
+		.large-shown {
+			display: none;
+		}
+		.features__item {
+			width: 70%; margin: auto; padding-bottom: 6rem; 
+			background: url(../img/how_make_arrow.png) 50% 100% no-repeat; background-size: auto 5.8rem;
+			p {text-align: center;}
+			.img {
+				width: 100%; height: 10.64rem; 
+				background: url(../img/1_sm.png) 50% 50% no-repeat; background-size: auto 100%;
+			}
+			.text {padding: 1rem 0;}
+		}
+		.features__item_2 .img {background-image: url(../img/2_sm.png);}
+		.features__item_3 .img {background-image: url(../img/3_sm.png);}
+		.features__item_4 .img {background-image: url(../img/4_sm.png);}
+		.features__item_5 .img {background-image: url(../img/5_sm.png);}
+		.features__item_6 .img {background-image: url(../img/6_sm.png);}
+		.features__item_7 .img {background-image: url(../img/7_sm.png);}
+		.features__item_8 {
+			background-image: none;
+			padding-bottom: 0;
+			.img {background-image: url(../img/8_sm.png);}
+		}
+	}
+}
+
 /*adaptivity*/
 	/*mobile*/
 	@media only screen and (min-width: $sm) {
@@ -98,6 +133,8 @@ section {
 			background-image: url(../img/paprika.png), url(../img/middle_right.png), url(../img/middle_bg.jpg); background-position: 2% 40%, 100% 40%, 50% 50%; background-repeat: no-repeat; background-size: auto 10rem, auto 15rem, 100% 100%;
 			.box_wrapper {background: url(../img/middle_arrows.png) 50% 100% no-repeat; background-size: contain; height: 6rem;}
 		}
+
+		/*new section styles*/
 		.section_2 {
 			background-image: url(../img/examples_bg.jpg); background-position: 50% 2.5rem;
 			.features {
@@ -124,14 +161,54 @@ section {
 				}
 			}
 		}
+
+		/*new section styles*/
+		.section_3 {
+			background: url(../img/how_made_bg.jpg) 50% 50% no-repeat; background-size: 100% 100%;
+			.features {
+				.large-shown {
+					display: block; 
+					.img {
+						width: 100%; height: 4.5rem; margin-top: 2rem;
+						background: url(../img/how_make_arrow.png) 100% 50% no-repeat; background-size: auto 100%;
+					}
+				}
+				.features__item {
+					width: 100%; padding-bottom: 0;
+					background: none;
+					p {text-align: left;}
+					.img {
+						width: 100%; height: 10.64rem; 
+						background: url(../img/1.png) 50% 50% no-repeat; background-size: 100% auto;
+					}
+					.text {padding: 0;}
+				}
+				.features__item_2 .img {background-image: url(../img/2.png); background-size: 97% auto;}
+				.features__item_3 .img {background-image: url(../img/3.png);}
+				.features__item_4 .img {background-image: url(../img/4.png); background-size: auto 97%;}
+				.features__item_5 .img {background-image: url(../img/5.png); background-size: auto 85%;}
+				.features__item_6 .img {background-image: url(../img/6.png); background-size: 93% auto;}
+				.features__item_7 .img {background-image: url(../img/7.png); background-size: 97% auto;}
+				.features__item_8 .img {background-image: url(../img/8.png);}
+			}
+		}
 	}
 	/*wideview monitor*/
 	@media only screen and (min-width: $xl) {
 		.section_1 {
-			background-image: url(../img/paprika.png), url(../img/middle_right.png), url(../img/middle_bg.jpg); background-position: 9% 40%, 100% 60%, 50% 50%; background-repeat: no-repeat; background-size: auto 12.5rem, auto 24rem, 100% 100%;
+			background-image: url(../img/paprika.png), url(../img/middle_right.png), url(../img/middle_bg.jpg); 
+			background-position: 9% 40%, 100% 60%, 50% 50%; background-repeat: no-repeat; background-size: auto 12.5rem, auto 24rem, 100% 100%;
+		}
+		.section_3 {
+			background: url(../img/how_made_bg.jpg) 50% 50% no-repeat; background-size: 100% 100%;
+			background-image: url(../img/how_made_left.png), url(../img/how_made_right.png), url(../img/how_made_bg.jpg); 
+			background-position: 0 0, 100% 0, 50% 50%; background-repeat: no-repeat; background-size: auto 100%, auto 100%, 100% 100%;
 		}
 	}
 	/*supperwide view monitor*/
 	@media only screen and (min-width: $xxl) {
 		.section_1 {background-image: url(../img/middle_bg_complete.jpg); background-position: 50% 50%; background-size: 100% 100%;}
+		.section_3 {
+			background: url(../img/how_made_bg_xlg.jpg) 50% 50% no-repeat; background-size: 100% 100%;
+		}
 	}
