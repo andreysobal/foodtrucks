@@ -46,15 +46,20 @@ header {
 	/*desktop or tablets in landscape*/
 	@media only screen and (min-width: $lg) {
 		header {
-			background-image: url(../img/header_bg.jpg);
-			background-size: 100% 100%;
+			background-image: url(../img/header_left.png), url(../img/header_right_lg.png), url(../img/header_bg.jpg); 
+			background-position: 0 10rem, 110% 6rem, 50% 50%; background-repeat: no-repeat; background-size: auto 35vw, auto 35vw, 100% 100%;
 			.top .title {padding-bottom: 7.5rem;}
 		}
 	}
 
 	/*wideview monitor*/
 	@media only screen and (min-width: $xl) {
+		header {
+			background-image: url(../img/header_left.png), url(../img/header_right.png), url(../img/header_bg.jpg); 
+			background-position: 0 0, 100% 0, 50% 50%; background-repeat: no-repeat; background-size: auto 38.3vw, auto 38.3vw, 100% 100%;
+		}
 	}
 	/*supperwide view monitor*/
 	@media only screen and (min-width: $xxl) {
+		header {background-image: url(../img/header_bg_xl.jpg); background-position: 50% 50%; background-size: 100% 100%;}
 	}
