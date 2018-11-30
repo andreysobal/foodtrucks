@@ -118,6 +118,32 @@ section {
 	}
 }
 
+.section_4 {
+	padding-bottom: 0;
+	background: url(../img/sal_bg.jpg) 50% 50% no-repeat; background-size: 100% 100%;
+	.box_wrapper {
+		display: inline-block;
+    padding: 3rem 2.5rem 3rem 4rem;
+		background: url(../img/sal_border.png) 50% 100% no-repeat; background-size: 100% 100%; height: auto; width: auto;
+		h2 {padding-bottom: 0.5rem;}
+	}
+	.features {
+		padding: 2rem 0; 
+		p {text-align: left; padding-bottom: 1.5rem;}
+		.button {margin: auto; margin-top: 1.5rem;}
+	}
+	.img_wrapper{
+		display: block; width: 100%; height: 100%;
+		.img {
+			width: 80%; margin: auto; height: 24rem;
+			background: url(../img/sal_photo.jpg) 50% 100% no-repeat; background-size: 100% auto;
+		}
+	}
+}
+.section_5 {
+	background: url(../img/slider_bg.jpg) 50% 50% no-repeat; background-size: 100% 100%;
+}
+
 /*adaptivity*/
 	/*mobile*/
 	@media only screen and (min-width: $sm) {
@@ -192,7 +218,20 @@ section {
 				.features__item_8 .img {background-image: url(../img/8.png);}
 			}
 		}
+
+		/*new section styles*/
+		.section_4 {
+			.img_wrapper{
+				.img {height: 100%;}
+			}
+		}
+
+		/*new section styles*/
+		.section_5 {
+			background: url(../img/slider_bg.jpg) 50% 50% no-repeat; background-size: 100% 100%;
+		}
 	}
+
 	/*wideview monitor*/
 	@media only screen and (min-width: $xl) {
 		.section_1 {
