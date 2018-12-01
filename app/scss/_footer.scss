@@ -1,0 +1,37 @@
+footer {
+	position: relative;
+	background-color: $black;
+	padding-top: 5.48rem; padding-bottom: 4.19rem;
+	.wrapper {position: static;}
+	.button__wrapper {
+		width: 100%;
+		position: absolute; top: -3rem; left: 0;
+	}
+	.text {padding: 1rem 0;}
+	.button {width: 14.5rem; padding: 0 1.5rem; margin: auto;}
+	.button:active {
+		color: $orange_active; border-color: $orange_active;
+	}
+}
+
+/*adaptivity*/
+	/*mobile*/
+	@media only screen and (min-width: $sm) {
+
+	}
+	/*tablets*/
+	@media only screen and (min-width: $md) {
+	}
+	/*desktop or tablets in landscape*/
+	@media only screen and (min-width: $lg) {
+		
+	}
+
+	/*wideview monitor*/
+	@media only screen and (min-width: $xl) {
+		
+	}
+	/*supperwide view monitor*/
+	@media only screen and (min-width: $xxl) {
+		
+	}

@@ -121,6 +121,7 @@ section {
 .section_4 {
 	padding-bottom: 0;
 	background: url(../img/sal_bg.jpg) 50% 50% no-repeat; background-size: 100% 100%;
+	.wrapper {padding: 0 1rem;}
 	.box_wrapper {
 		display: inline-block;
     padding: 3rem 2.5rem 3rem 4rem;
@@ -128,7 +129,7 @@ section {
 		h2 {padding-bottom: 0.5rem;}
 	}
 	.features {
-		padding: 2rem 0; 
+		padding-top: 2rem; padding-bottom: 2rem; 
 		p {text-align: left; padding-bottom: 1.5rem;}
 		.button {margin: auto; margin-top: 1.5rem;}
 	}
@@ -230,6 +231,7 @@ section {
 
 		/*new section styles*/
 		.section_4 {
+			.wrapper {padding: 0;}
 			.img_wrapper{
 				.img {height: 100%;}
 			}
