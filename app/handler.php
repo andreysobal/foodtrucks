@@ -75,7 +75,7 @@ $mail->Username = $fromEmail;
 $mail->Password = $fromPass;
 //Recipients
 $mail->AddAddress($recipientMail, $recipientName);
-$mail->SetFrom('mail@foxystudio.by', "Website Form");
+$mail->SetFrom('mail@foodtrucks.by', "Website Form");
 $mail->Subject = $subj;
 $mail->MsgHTML($text);
 
