@@ -31,9 +31,6 @@
 </head>
 
 <body>
-
-	<!-- Custom HTML -->
-
 	<div class="wrapper_main" id="top">
 		<header>
 			<div class="wrapper">
@@ -60,7 +57,7 @@
 							</div>
 							<div class="col-lg-6">
 								<div class="receive">
-									<button class="button button_transparent-orange">получить предложение</button>
+									<button class="button button_transparent-orange showForm">получить предложение</button>
 								</div>
 							</div>
 						</div>
@@ -233,7 +230,7 @@
 						<div class="prev-slide" id="prev-slide"></div>
 						<div class="next-slide" id="next-slide"></div>
 					</div>
-					<div class="button button_transparent-orange">получить бизнес-план</div>
+					<div class="button button_transparent-orange showForm">получить бизнес-план</div>
 				</div>
 				<div class="wrapper option">
 					<h2>ФУД ТРАКИ ПО ИНДИВИДУАЛЬНОМУ ЗАКАЗУ</h2>
@@ -248,7 +245,7 @@
 								<li>монтировать во внутреннее пространство <br>тандыр</li>
 								<li>закрытый мангал и другие виды <br>теплового оборудования.</li>
 							</ul>
-							<div class="button button_orange-white">РАСЧЕТ СТОИМОСТИ</div>
+							<div class="button button_orange-white showForm">РАСЧЕТ СТОИМОСТИ</div>
 						</div>
 					</div>
 				</div>
@@ -371,12 +368,29 @@
 						</div>
 					</div>
 					<div class="col-lg-4">
-						<div class="button button_transparent-white">обратный звонок</div>
+						<div class="button button_transparent-white showForm">обратный звонок</div>
 					</div>
 				</div>
 			</div>
 		</footer>
 	</div>
+
+	<!-- Curtain for show progress of uploading information -->
+	<div class="ironCurtain" style = "display: none">
+    <div class="progressBar">
+        <span id="progressStatus"><span>Загрузка</span></span>
+        <div class="container">
+          <div class="bar"></div>
+        </div>
+    </div>
+    <form action="../handler.php" method="post" name="hidden-form" class="rep-form hidden-form" id="hidden-form"  style = "display: none" novalidate>
+    	<div class="close"><span></span></div>
+	  	<h3 class="text_black">Оставь свои данные<br> и мы перезвоним</h3>
+	  	<input type="name" placeholder="ваше имя" name="name" class="textarea name text_black" required>
+	  	<input type="tel" placeholder="ваш номер" name="number" class="textarea tel text_black" required>
+	  	<button type="submit" class="button text_black button_yellow" ><div class="button-wrapp"><span>отправить</span></div></button>
+	  </form>
+  </div>
 
 	<script src="scripts/scripts.min.js"></script>
 

@@ -3,6 +3,25 @@
 $(document).ready(function(){
     const mailReg = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const telReg = /^\+[0-9]{3}\s*?-*?[0-9]{2}\s*?-*?[0-9]{3}\s*?-*?[0-9]{2}\s*?-*?[0-9]{2}$/;
+    console.log('load ');
+    $(document).on('click', '.showForm', function(){
+        $('.ironCurtain').show();
+        $('#hidden-form').show();
+    });
+    $(document).on('touch', '.showForm', function(){
+        console.log('touch ');
+        $('.ironCurtain').show();
+        $('#hidden-form').show();
+    });
+    $(document).on('touch', '.close', function(){
+        console.log('touch ');
+        $('.ironCurtain').hide();
+        $('#hidden-form').hide();
+    });
+    $(document).on('click', '.close', function(){
+        $('.ironCurtain').hide();
+        $('#hidden-form').hide();
+    });
 
     $(document).on('focusin', '.rep-form textarea.textarea', function(){
         $(this).removeClass('error-field');
@@ -13,7 +32,6 @@ $(document).ready(function(){
     });
 
     $('.rep-form').submit(function(event){
-        
         let errstr = '';
         let form = event.currentTarget,
             mailField = form.querySelector('.rep-form .email'),
@@ -38,6 +56,14 @@ $(document).ready(function(){
                 telField.classList.add('error-field');
             }
         };
+        if (contains(form, nameField)) {
+            textareas.push(nameField);
+            if (nameField.value.length < 5) {
+                if (errstr.length > 0) errstr += '\n';
+                errstr +='Поле с именем должно содержать минимум 5 символов.';
+                nameField.classList.add('error-field');
+            }
+        };
 
         if (contains(form, mailField)) {
             textareas.push(mailField);
@@ -45,15 +71,6 @@ $(document).ready(function(){
                 if (errstr.length > 0) errstr += '\n';
                 errstr += 'Поле "Ваш e-mail" должно содержать правильный адрес электронной почты.' + ' ';
                 mailField.classList.add('error-field');
-            }
-        };
-
-        if (contains(form, nameField)) {
-            textareas.push(nameField);
-            if (nameField.value.length < 5) {
-                if (errstr.length > 0) errstr += '\n';
-                errstr +='Поле с именем должно содержать минимум 5 символов.';
-                nameField.classList.add('error-field');
             }
         };
 
@@ -103,7 +120,6 @@ $(document).ready(function(){
                     $('.progressBar #pos').html('');
                     $('.progressBar #total').html('');
                     $('.progressBar .bar').css('width', '10px');
-                    $('.ironCurtain').hide();
                     $('.progressBar').hide();
                     _alert('Проблемы при передаче сообщения. Попробуйте еще раз.');
                     console.log(textStatus);
@@ -118,7 +134,7 @@ $(document).ready(function(){
                     setTimeout(function() {
                         $('.ironCurtain').hide();
                         $('.progressBar').hide();
-
+                        $('#hidden-form').hide();
                         let mess_obj = data;
                         if (mess_obj.sent != 1 ||  data == '') {
                             _alert('Пожалуйста, заполните все поля формы.');
