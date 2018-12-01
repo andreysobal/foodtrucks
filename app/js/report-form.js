@@ -87,7 +87,7 @@ $(document).ready(function(){
 
             _alert(errstr);
         } else {
-            form.querySelector('h2').focus(); //change focus to some element to prevent keyboard visible state.
+            form.querySelector('h3').focus(); //change focus to some element to prevent keyboard visible state.
 
             $('.ironCurtain').show();
             $('.progressBar').show();
