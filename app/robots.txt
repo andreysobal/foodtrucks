@@ -2,3 +2,6 @@ User-agent: *
 Disallow: /scripts/
 Disallow: /lib/
 Disallow: /css/
+Disallow: /fonts/
+Disallow: /libruaries/
+Disallow: /img/
