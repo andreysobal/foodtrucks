@@ -6,7 +6,10 @@ header {
 		position: relative; height: auto;
 		.title {
 			padding-bottom: 3rem;
-			p {padding-top: 0.5rem;}
+			p {
+				padding-top: 0.5rem;
+				span {font-size: 0.827rem;}
+			}
 			.logo {padding-top: 0.5rem;}
 		}
 		.content {
