@@ -83,7 +83,7 @@ gulp.task('components_script', function() {
 
 gulp.task('phpmailer', () => {
     return gulp.src('vendor/phpmailer/phpmailer/src/**')
-        .pipe(gulp.dest('app/libruaries/phpmailer/src/'));
+        .pipe(gulp.dest('app/lib/phpmailer/src/'));
 });
 
 gulp.task('img', function() {
@@ -97,7 +97,7 @@ gulp.task('img', function() {
         .pipe(gulp.dest('dist/img'));
 });
 
-gulp.task('clean', del.bind(null, ['app/css', 'app/scripts', 'app/libruaries', 'dist']));
+gulp.task('clean', del.bind(null, ['app/css', 'app/scripts', 'app/lib', 'dist']));
 gulp.task('extras', () => {
   return gulp.src([
     'app/**/*.*',
@@ -106,8 +106,6 @@ gulp.task('extras', () => {
     '!app/js/**/*.*',
     '!app/res/**/*.*',
     '!app/img/**/*.*',
-    'app/*.php',
-    'app/*.html',
     'app/*.**'
   ], {
     dot: true

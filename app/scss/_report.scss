@@ -30,8 +30,10 @@
   top: 0;
   right: 0;
   bottom: 0;
-  margin: 50rem auto 0;
+  margin: auto;
+  margin-bottom: 15vh;
   color: $white;
+  opacity: 0.7;
 }
 
 .progressBar .container {
