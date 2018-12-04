@@ -13,6 +13,9 @@ var gulp          = require('gulp'),
 		concatCss     = require('gulp-concat-css'),
 		del 					= require('del'),
 		runSequence 	= require('run-sequence'),
+		imagemin    = require('gulp-imagemin'),
+    pngquant    = require('imagemin-pngquant'),
+    cache       = require('gulp-cache'),
 		babel 				= require('gulp-babel');
 
 gulp.task('browser-sync', function() {
@@ -83,14 +86,26 @@ gulp.task('phpmailer', () => {
         .pipe(gulp.dest('app/libruaries/phpmailer/src/'));
 });
 
-gulp.task('clean', del.bind(null, ['app/css', 'app/scripts', 'app/images', 'app/libruaries', 'dist']));
+gulp.task('img', function() {
+    return gulp.src('app/img/**/*')
+        .pipe(cache(imagemin({
+            interlaced: true,
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        })))
+        .pipe(gulp.dest('dist/img'));
+});
+
+gulp.task('clean', del.bind(null, ['app/css', 'app/scripts', 'app/libruaries', 'dist']));
 gulp.task('extras', () => {
   return gulp.src([
     'app/**/*.*',
     '!app/scss/**/*.*',
     '!app/components/**/*.*',
     '!app/js/**/*.*',
-    'app/img/**/*.*',
+    '!app/res/**/*.*',
+    '!app/img/**/*.*',
     'app/*.php',
     'app/*.html',
     'app/*.**'
@@ -109,6 +124,6 @@ gulp.task('default', ['watch']);
 
 gulp.task('build', () => {
   return new Promise(resolve => {
-    runSequence(['clean'], ['styles', 'components_style', 'js', 'components_script', 'phpmailer'], ['extras'], resolve);
+    runSequence(['clean'], ['styles', 'components_style', 'js', 'components_script', 'phpmailer', 'img'], ['extras'], resolve);
   });
 });
