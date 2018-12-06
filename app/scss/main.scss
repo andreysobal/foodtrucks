@@ -85,8 +85,7 @@ a:-webkit-any-link {text-decoration: none !important; -webkit-tap-highlight-colo
 	display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: center; align-items: center;
   position: relative; width: 18rem; height: 3.22rem; box-sizing: content-box; padding: 0 1.2rem;
   font-size: 1.285rem; font-weight: 700; text-transform: uppercase; text-align: center;
-  outline: none; 
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  outline: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-decoration: none; border: unset;
 }
 .button_top {
 	display: flex; flex-direction: column; justify-content: center; align-items: center; width: 5.83rem; height: 5.83rem;
@@ -94,9 +93,10 @@ a:-webkit-any-link {text-decoration: none !important; -webkit-tap-highlight-colo
 	position: relative; margin: auto;
 	border-radius: 50%; border: 1px solid $orange;
 	font-size: 0.9rem; font-weight: bold; line-height: 1.2;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-decoration: none; outline: none; 
 }
 
-.button_top:active {background: $yellow_active; color: $white; box-shadow: 0px 0px 9px 0.4rem $yellow_shadow; user-select: none;}
+.button_top:active {background: $yellow_active; color: $white; box-shadow: 0px 0px 9px 0.4rem $yellow_shadow; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
 .button_top p {width: 80%; height: auto; padding-bottom: 0.7rem; text-transform: uppercase;}
 .button_top p:first-child {height: 1.5rem; background: url(../img/top_arrow.png) 50% 50% no-repeat; background-size: contain;}
 
